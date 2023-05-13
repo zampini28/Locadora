@@ -12,4 +12,4 @@ javac -Xlint:unchecked -d bin -cp "lib/*" @sources;
 rm sources;
 
 # Run the java project.
-#java -cp "bin:lib/*" locadora.Locadora;
+java -cp "bin:lib/*" locadora.Locadora;
