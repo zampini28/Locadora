@@ -6,18 +6,13 @@ import locadora.modelo.dao.CategoriaDAO;
 
 public class ProdutoControle {
     public static boolean controle(String[] dados, String operacao) {
-        switch (operacao) {
-            case "Inserir":
-                return inserirProduto(dados);
-            case "Deletar":
-                return deletarProduto(dados);
-            case "Atualizar":
-                return atualizarProduto(dados);
-            case "Buscar":
-                return buscarProduto(dados);
-            default:
-                throw new IllegalArgumentException("Operação inválida!");
-        }
+        return switch (operacao) {
+            case "Inserir" -> inserirProduto(dados);
+            case "Deletar" -> deletarProduto(dados);
+            case "Atualizar" -> atualizarProduto(dados);
+            case "Buscar" -> buscarProduto(dados);
+            default -> throw new IllegalArgumentException("Operação inválida!");
+        };
     }
 
     public static boolean inserirProduto(String[] dados) {
